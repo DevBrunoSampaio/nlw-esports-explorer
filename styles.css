@@ -1,0 +1,138 @@
+/*--RESET CSS, LINHA 2 Á 6*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+body {
+  background-image: url(./assets/bg.jpg);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: #121214;
+}
+body * {
+  font-family: 'Inter', sans-serif;
+  line-height: 160%;
+}
+header {
+  margin-top: 32px;
+  height: 120px;
+}
+header div {
+  width: 120px;
+  margin: auto; /*Esta margem está alinhando a imagem ao centro*/
+  background-image: linear-gradient(
+    90deg,
+    #9572fc 0%,
+    #43e7ad 50.52%,
+    #e2d45c 100%
+  );
+  border-radius: 50%;
+  display: flex; /*Alinhando a div com a Img que está dentro dela*/
+  padding: 4px; /*Expandindo a div para criar o efeito de borda na Img*/
+  transition: transform 0.3s;
+}
+header div:hover {
+  transform: scale(1.1);
+}
+header img {
+  width: 100%;
+  border-radius: 50%;
+}
+main {
+  max-width: 580px;
+  width: 90%;
+  margin: 32px auto;
+
+  display: flex; /*Uma outra forma de se fazer seria utilizar o display:grid, neste caso não precisa do flex-direction */
+  flex-direction: column;
+  gap: 24px;
+}
+section {
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    #9572fc 0%,
+    #43e7ad 50.52%,
+    #e2d45c 100%
+  );
+  padding-top: 4px;
+  border-radius: 10px;
+}
+section div {
+  background-color: #2a2634;
+  padding: 32px;
+  padding-top: 24px;
+  border-radius: 8px;
+}
+section h2 {
+  letter-spacing: -0.47px;
+}
+section p {
+  letter-spacing: -0.18px;
+  color: #a1a1aa;
+}
+section ul {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap; /*Joga os elementos para baixo quando não couber na largura da caixa*/
+}
+section ul li {
+  transition: transform 0.3s;
+}
+section ul li:hover {
+  transform: scale(1.1);
+}
+.games-list img {
+  width: 90px;
+  border-radius: 8px;
+}
+.channel-list img {
+  width: 70px;
+  border-radius: 50%;
+  border: 1px solid #443e54;
+}
+
+/*Animation*/
+header div {
+  animation: fromTop 0.7s;
+  animation-delay: 0.3s backwards;
+}
+main section {
+  animation: fromBottom 0.7s backwards;
+}
+main section:nth-child(1) {
+  animation-delay: 0;
+}
+main section:nth-child(2) {
+  animation-delay: 0.2s;
+}
+main section:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
